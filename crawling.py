@@ -1,7 +1,7 @@
 import urllib.request
 from urllib.error import URLError, HTTPError, ContentTooShortError
-import requests
 from bs4 import BeautifulSoup
+import webbrowser
 
 def download(url):
     try:
@@ -14,5 +14,4 @@ def download(url):
 page = download('http://swedu.khu.ac.kr/board5/bbs/board.php?bo_table=06_01&page=1')
 soup = BeautifulSoup(page)
 target_url = soup.find(class_="bo_tit").find("a")["href"]
-
-print(target_url)
+webbrowser.open(target_url)
