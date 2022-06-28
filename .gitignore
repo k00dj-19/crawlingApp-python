@@ -1,2 +1,3 @@
+__pycache__/
 config.py
-kakao_code.json
+*.json
